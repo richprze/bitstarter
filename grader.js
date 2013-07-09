@@ -36,20 +36,28 @@ var assertFileExists = function(infile) {
     return instr;
 };
 
+// loads html file into cheerio. cheerio categorizes by tag
 var cheerioHtmlFile = function(htmlfile) {
     return cheerio.load(fs.readFileSync(htmlfile));
 };
 
+// parses checks.json file. in this case = array of html tags
 var loadChecks = function(checksfile) {
     return JSON.parse(fs.readFileSync(checksfile));
 };
 
 var checkHtmlFile = function(htmlfile, checksfile) {
     $ = cheerioHtmlFile(htmlfile);
+    // an array of html tags to check
     var checks = loadChecks(checksfile).sort();
     var out = {};
+    // for each tag in checks array
     for(var ii in checks) {
+	// test if tag is present in html file (which is in cheerio).
+	// if tag from checks is present in $ (cheerio) then length 
+	// will be 1 or higher. so check if length > 0
 	var present = $(checks[ii]).length > 0;
+	// out array where key = tag and value = true/false
 	out[checks[ii]] = present;
     }
     return out;
@@ -66,7 +74,9 @@ if(require.main == module) {
 	.option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
 	.option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
 	.parse(process.argv);
+    // returns out array (tag = key, value = true/false
     var checkJson = checkHtmlFile(program.file, program.checks);
+    // format out array into JSON string; 4 = # spaces
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
 } else {
