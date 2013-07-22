@@ -1,16 +1,24 @@
+<!-- TO DO / TO FIX
+	For mobile, carousel text doesn't re-align properly (it sits over the left <
+	"Video" is still styled as a picture in a featurette, so on mobile it get's real small like, instead should take up whole width of screen
+	Add Tiers of funding
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>My First Bitstarter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <!-- <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css"> -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
+    <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css">
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+
     <style type="text/css">
       /* Large desktops */
       @media (min-width: 980px) {
@@ -24,6 +32,107 @@
 
 	.linediv-r {
 	  border-left: 1px solid white;
+	}
+      }
+
+      /* Normal desktops */
+      @media (max-width: 979px) {
+	.container.navbar-wrapper {
+	  margin-bottom: 0;
+	  width: auto;
+	}
+
+	.navbar-inner {
+	  border-radius: 0;
+	  /* margin: -20px 0; */
+	}
+
+	.carousel .item {
+	  height: 500px;
+	}
+
+	.carousel img {
+	  width: auto;
+	  height: 500px;
+	}
+
+	.featurette {
+	  height: auto;
+	  padding: 0;
+	}
+
+	.featurette-image.pull-left, .featurette-image.pull-right {
+	  display: block;
+	  float: none;
+	  max-width: 40%;
+	  margin: 0 auto 20px;
+	}
+
+	.linediv-l {
+	  border-right: 1px solid white;
+	}
+
+	.linediv-r {
+	  border-left: 1px solid white;
+	}
+      }
+
+
+      /* wide phones (I think) */
+      @media (max-width: 767px) {
+	.navbar-inner {
+	  /* margin: -20px; */
+	}
+
+	.carousel {
+	  margin-left: -20px;
+	  margin-right: -20px;
+	}
+
+	.carousel .conainer {
+	}
+
+	.carousel .item {
+	  height: 300px;
+	}
+
+	.carousel img {
+	  height; 300px;
+	}
+
+	.carousel-caption {
+	  width: 65%;
+	  padding: 0 70px;
+	  margin-top: 80px;
+	}
+
+	.carousel-caption h1 {
+	  font-size: 30px;
+	}
+
+	.carousel-caption .lead, .carousel-caption .btn {
+	  font-size: 18px;
+	}
+
+	.marketing .span4 + .span4 {
+	  margin-top: 40px;
+	}
+
+	.featurette-heading {
+	  font-size: 30px;
+	}
+
+	.featurette .lead {
+	  font-size: 18px;
+	  line-height: 1.5;
+	}
+
+	.linediv-l {
+	  border-bottom: 1px solid white;
+	}
+
+	.linediv-r {
+	  border-top: 1px solid white;
 	}
       }
 
@@ -47,6 +156,7 @@
       /* Main body and headings */
       body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	color: #5a5a5a;
       }
 
       .heading, .subheading {
@@ -72,6 +182,111 @@
       .box div {
 	border: 1px solid black;
       }
+
+      /* Carousel */
+
+      /* Carousel - base class */
+      .carousel {
+	margin-bottom: 60px;
+	margin-top: -20px;
+      }
+
+      .carousel .container {
+	position: relative;
+	z-index: 9;
+      }
+
+      .carousel-control {
+	height: 80px;
+	margin-top: 0;
+	font-size: 120px;
+	text-shadow: 0 1px 1px rgba(0,0,0,.4);
+	background-color: transparent;
+	border: 0;
+	z-index: 10;
+      }
+
+      .carousel .item {
+	height: 500px;
+      }
+
+      .carousel img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 500px;
+      }
+
+      .carousel-caption {
+	background-color: transparent;
+	position: static;
+	max-width: 550px;
+	padding: 0 20px;
+	margin-top: 200px;
+      }
+
+      .carousel h1, .carousel-caption .lead {
+	margin: 0;
+	line-height: 1.25;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      }
+
+      .carousel-caption .btn {
+	margin-top: 10px;
+      }
+
+      /* Marketing Content */
+
+      .marketing .span4 {
+	text-align: center;
+      }
+      .marketing .span8 {
+	text-align: center;
+	margin-bottom: 10px;
+      }
+
+      .marketing h2 {
+	font-weight: normal;
+      }
+
+      .marketing .span4 p {
+	margin-left: 10px;
+	margin-right: 10px;
+      }
+
+      /* Featurettes */
+
+      .featurette-divider {
+	margin: 80px 0;
+      }
+      .featurette {
+	padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+	overflow: hidden; /* Vertically center images part 2: clear their floats. */
+      }
+      .featurette-image {
+	margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+      }
+
+      /* Give some space on sides of the images so text doesn't run into it */
+      .featurette-image.pull-left {
+	margin-right: 40px;
+      }
+      .featurette-image.pull-right {
+	margin-left: 40px;
+      }
+
+      /* Thin out the marketing headings */
+      .featurette-heading {
+	font-size: 50px;
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -1px;
+      }
+
+
+
 
       /* Pitch */
       .pitch {
@@ -145,24 +360,51 @@
   </div>
 
 
-  <!-- Use row-fluid inside containers to achieve a resiable layout. -->
-  <div class="container">
-    <!-- Heading -->
-    <div class="row-fluid heading">
-      <div class="span12">
-	<h1>Product</h1>
+  <!-- Using carousel to look pretty -->
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="item active">
+	<img src="http://placehold.it/1500x550" alt="">
+	<div class="container">
+	  <div class="carousel-caption">
+	    <h1>The Ultimate Puzzle Solver</h1>
+	    <p class="lead">Solve your favorite book-based puzzles in a flash! Simply take a picture of the puzzle with your phone and get the puzzle, answer and hints t the touch of your finger.</p>
+	    <a class="btn btn-large btn-primary" href="">Preorder Now</a>
+	  </div>
+	</div>
+      </div>
+      <div class="item">
+	<img src="http://placehold.it/1500x550" alt="">
+	<div class="container">
+	  <div class="carousel-caption">
+	    <h1>KenKen, Kakuro, basic math?</h1>
+	    <p class="lead">Not just for sudoku puzzles! Solve KenKen, Kakuro and even basic math problems, all with a pic!</p>
+	    <button class="btn btn-success btn-large">Preorder</button>
+	  </div>
+	</div>
+      </div>
+      <div class="item">
+	<img src="http://placehold.it/1500x550" alt="">
+	<div class="container">
+	  <div class="carousel-caption">
+	    <h1>And more</h1>
+	    <p class="lead">It can probably do more!</p>
+	    <button class="btn btn-success btn-large">Learn More</button>
+	  </div>
+	</div>
       </div>
     </div>
-    <div class="row-fluid subheading">
-      <div class="span12">
-	<p class="lead">One sentence description</p>
-      </div>
-    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  </div> <!-- end of my carousel -->
 
-    <!-- The pitch, video, stats -->
+
+  <!-- the details... -->
+  <div class="container marketing">
+
     <div class="row-fluid pitch">
       <div class="span5 offset1 video">
-	<img class="img-polaroid" src="http://placehold.it/480x300">
+	<p class="lead">Funding this will be great!</p>
       </div>
       <div class="span5 actions">
 	<div class="span8 offset2">
@@ -201,28 +443,64 @@
       </div>
     </div>
 
-    <!-- marketing copy... -->
-    <div class="row-fluid section1">
-      <div class="span5 offset1 asset">
-	<img class="img-polaroid" src="http://placehold.it/480x300">
-      </div>
-      <div class="span5 copy">
-	<p>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis nisi feugiat, feugiat felis sit amet, pellentesque eros. Duis placerat felis urna, id accumsan dolor suscipit id. Nam sem augue, pellentesque a ligula sit amet, dignissim vulputate erat. Vivamus interdum tortor lobortis mollis dictum. Pellentesque pulvinar venenatis turpis. 
-	</p>
+    <!-- The Featurettes -->
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+      <img class="featurette-image pull-left" src="http://placehold.it/500x500">
+      <h2 class="featurette-heading">This is the video, yo ho!</h2>
+      <p class="lead">Blah blah blah. <span class="muted">This text is muted.</span> Blah blah blah.</p>
+    </div>
+
+    <hr class="featurette-divider">
+    <!-- 3 column row -->
+    <div class="row detail">
+      <div class="span8 offset2">
+	<h2>We'll start with Sudoku, and as the funding tiers are reached, we'll add KenKen and Kakuro</h2>
       </div>
     </div>
 
-    <div class="row-fluid section2">
-      <div class="span5 offset1 copy">
-	<p>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis nisi feugiat, feugiat felis sit amet, pellentesque eros. Duis placerat felis urna, id accumsan dolor suscipit id. Nam sem augue, pellentesque a ligula sit amet, dignissim vulputate erat. Vivamus interdum tortor lobortis mollis dictum. Pellentesque pulvinar venenatis turpis. Etiam sed dolor erat. In hac habitasse platea dictumst. Fusce varius bibendum augue vitae ornare. Vestibulum nec erat mauris.
-	</p>
+    <div class="row detail">
+      <div class="span4">
+	<img class="img-circle" src="http://placehold.it/140x140">
+	<h2>Sudoku</h2>
+	<p>Talk about sudoku solving capabilities here...</p>
+	<p><a class="btn" href="#">Sudoku details &raquo;</a></p>
       </div>
-      <div class="span5 asset">
-	<img class="img-polaroid" src="http://placehold.it/480x300">
+      <div class="span4">
+	<img class="img-circle" src="http://placehold.it/140x140">
+	<h2>KenKen</h2>
+	<p>Talk about KenKen solving capabilities here...</p>
+	<p><a class="btn" href="#">KenKen details &raquo;</a></p>
+      </div>
+      <div class="span4">
+	<img class="img-circle" src="http://placehold.it/140x140">
+	<h2>Kakuro</h2>
+	<p>Talk about Kakuro solving capabilities here...</p>
+	<p><a class="btn" href="#">Kakuro details &raquo;</a></p>
       </div>
     </div>
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+      <img class="featurette-image pull-right" src="http://placehold.it/500x500">
+      <h2 class="featurette-heading">More on the app and what it'll do.</h2>
+      <p class="lead">Blah blah blah. <span class="muted">This text is muted.</span> Blah blah blah.</p>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+      <img class="featurette-image pull-left" src="http://placehold.it/500x500">
+      <h2 class="featurette-heading">More on the app and what it'll do.</h2>
+      <p class="lead">Blah blah blah. <span class="muted">This text is muted.</span> Blah blah blah.</p>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- End featurette -->
 
     <div class="row-fluid faq">
       <div class="span10 offset1">
