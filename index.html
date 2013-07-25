@@ -265,15 +265,15 @@
 	padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
 	overflow: hidden; /* Vertically center images part 2: clear their floats. */
       }
-      .featurette-image {
+      .featurette-image, .featurette-video {
 	margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
       }
 
       /* Give some space on sides of the images so text doesn't run into it */
-      .featurette-image.pull-left {
+      .featurette-image.pull-left, .featurette-video.pull-left {
 	margin-right: 40px;
       }
-      .featurette-image.pull-right {
+      .featurette-image.pull-right, .featurette-video.pull-right {
 	margin-left: 40px;
       }
 
@@ -403,7 +403,7 @@
   <div class="container marketing">
 
     <div class="row-fluid pitch">
-      <div class="span5 offset1 video">
+      <div class="span5 offset1 order">
 	<p class="lead">Funding this will be great!</p>
       </div>
       <div class="span5 actions">
@@ -448,7 +448,7 @@
     <hr class="featurette-divider">
 
     <div class="featurette">
-      <img class="featurette-image pull-left" src="http://placehold.it/500x500">
+      <iframe class="featurette-video pull-left" width="640" height="360" src="http://www.youtube.com/embed/ccenFp_3kq8?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
       <h2 class="featurette-heading">This is the video, yo ho!</h2>
       <p class="lead">Blah blah blah. <span class="muted">This text is muted.</span> Blah blah blah.</p>
     </div>
